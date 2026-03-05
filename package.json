@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install && tsc",
     "start": "npm run build && node dist/index.js",
-    "clean": "rm -r log dist node_modules"
+    "clean": "rm -r log dist"
   },
   "keywords": [],
   "author": "",
