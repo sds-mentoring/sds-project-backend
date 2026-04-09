@@ -1,8 +1,12 @@
 import express from "express";
 import { logger } from "./logger.js";
+import { router } from "./route.js";
 
 const app = express();
 const port = 3000;
+
+app.use(router);
+app.use(express.json());
 
 app.get("/health", (req, res) => {
   const date = new Date();
