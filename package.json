@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config jest.config.cjs",
     "build": "npm install && tsc",
     "start": "node dist/index.js",
     "clean": "rm -r log dist"
@@ -19,11 +19,17 @@
     "@types/jsonwebtoken": "^9.0.10",
     "dotenv": "^17.4.1",
     "express": "^5.2.1",
-    "jsonwebtoken": "^9.0.3"
+    "jsonwebtoken": "^9.0.3",
+    "redis": "^4.7.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@types/jest": "^29.5.14",
     "@types/node": "^25.2.1",
+    "@types/supertest": "^6.0.3",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

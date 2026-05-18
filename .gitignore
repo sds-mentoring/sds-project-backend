@@ -3,3 +3,6 @@ log/
 node_modules/
 *.pem
 .env
+.DS_Store
+.zed
+*.rdb
