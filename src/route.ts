@@ -28,7 +28,10 @@ router.get("/auth/callback", async (req, res) => {
   if (!result) return errorRedirect("oauth_failed");
 
   const { userId, accessToken: naverAccessToken, refreshToken: naverRefreshToken } = result;
-  await storeOAuthTokens(userId, { accessToken: naverAccessToken, refreshToken: naverRefreshToken });
+  await storeOAuthTokens(userId, {
+    accessToken: naverAccessToken,
+    refreshToken: naverRefreshToken,
+  });
 
   const params = new URLSearchParams({
     id: userId,
@@ -55,7 +58,10 @@ router.post("/auth/login", async (req, res) => {
   }
 
   const { userId, accessToken: naverAccessToken, refreshToken: naverRefreshToken } = result;
-  await storeOAuthTokens(userId, { accessToken: naverAccessToken, refreshToken: naverRefreshToken });
+  await storeOAuthTokens(userId, {
+    accessToken: naverAccessToken,
+    refreshToken: naverRefreshToken,
+  });
 
   logger.info(`POST /auth/login user=${userId}`);
 
@@ -120,6 +126,5 @@ router.get("/health", (req, res) => {
     timestamp: date.toISOString(),
     version: process.env.npm_package_version,
     uptime: process.uptime(),
-    checks: {},
   });
 });
