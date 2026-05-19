@@ -126,5 +126,6 @@ router.get("/health", (req, res) => {
     timestamp: date.toISOString(),
     version: process.env.npm_package_version,
     uptime: process.uptime(),
+    payload: {},
   });
 });
