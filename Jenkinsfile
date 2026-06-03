@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    triggers {
-    }
-
     stages {
         stage('Test') {
             steps {
