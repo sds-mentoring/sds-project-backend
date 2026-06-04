@@ -4,6 +4,7 @@ import "dotenv/config";
 import type { Request, Response, NextFunction } from "express";
 import { redis } from "./redis.js";
 
+
 const privateKey = fs.readFileSync("private.pem", "utf8");
 const publicKey = fs.readFileSync("public.pem", "utf8");
 
