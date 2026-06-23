@@ -109,12 +109,13 @@ router.get("/me", verifyAccessToken, async (req, res) => {
   if (!profile) return res.status(500).json({ message: "Failed to fetch user info" });
 
   logger.info(`GET /me user=${userId}`);
+  logger.info(profile);
 
   return res.status(200).json({
     name: profile.name,
     phoneNumber: profile.mobile,
     email: profile.email,
-    profileImageUrl: profile.profile_image || null,
+    profileImageUrl: profile.profile_image,
   });
 });
 
