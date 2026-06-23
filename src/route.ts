@@ -72,7 +72,6 @@ router.post("/auth/login", async (req, res) => {
   });
 });
 
-// Frontend sends the refresh token in the request body.
 router.post("/auth/refresh", async (req, res) => {
   const { refreshToken } = req.body as { refreshToken?: string };
   if (!refreshToken) return res.status(401).json({ message: "No refresh token provided" });
