@@ -114,7 +114,7 @@ router.get("/me", verifyAccessToken, async (req, res) => {
     name: profile.name,
     phoneNumber: profile.mobile,
     email: profile.email,
-    profileImageUrl: profile.profile_image,
+    profileImageUrl: profile.profile_image || null,
   });
 });
 
